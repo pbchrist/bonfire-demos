@@ -1,51 +1,212 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Roofer in St. Joseph, MO — market brief</title>
+<title>Roofing in St. Joseph, MO — where every company stands</title>
 <style>
-:root{--ink:#13202b;--paper:#f7f5ef;--line:#dfe3e4;--muted:#5c6870;--accent:#165b72}
-*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);
-font:16px/1.55 Inter,system-ui,sans-serif}
-.w{width:min(860px,calc(100% - 40px));margin:auto;padding:56px 0 72px}
-.tag{text-transform:uppercase;letter-spacing:.13em;font-size:.7rem;font-weight:800;color:var(--accent)}
-h1{font-size:clamp(1.9rem,4vw,2.6rem);line-height:1.05;letter-spacing:-.035em;margin:.25em 0 .1em}
-.sub{color:var(--muted)}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:32px 0}
-.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
-.card .v{font-size:1.7rem;font-weight:800;letter-spacing:-.03em}
-.card .l{color:var(--muted);font-size:.82rem;margin-top:2px}
-ul{padding-left:20px}li{margin:.5em 0}
-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:14px}
-th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);font-size:.93rem}
-th{background:#fbfaf7;font-size:.74rem;text-transform:uppercase;letter-spacing:.09em;color:var(--muted)}
-tr:last-child td{border-bottom:none}
-td.n{color:var(--muted);width:38px}td.num{text-align:right;font-variant-numeric:tabular-nums}
-b.no{color:#a8442a}
-footer{margin-top:40px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
-</style></head><body><div class="w">
-<div class="tag">Market brief · observed 2026-09-09</div>
-<h1>Roofer in St. Joseph, MO</h1>
-<p class="sub">Every roofer business Google returns for this town, with what is publicly
-visible about each one.</p>
+:root{
+  --bg:#0d1117; --panel:#151c26; --line:#232c39; --ink:#e8eef5; --dim:#8b9bb0;
+  --accent:#ff8a3d; --accent-soft:rgba(255,138,61,.16); --good:#4ec9a5; --bad:#e5695b;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+ font:16px/1.55 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+ -webkit-font-smoothing:antialiased}
+.wrap{width:min(1000px,calc(100% - 36px));margin:auto;padding:56px 0 90px}
+.eyebrow{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:800}
+h1{font-size:clamp(2rem,4.6vw,3.1rem);line-height:1.02;letter-spacing:-.04em;margin:.3em 0 .2em}
+.lede{color:var(--dim);font-size:1.06rem;max-width:60ch;margin:0}
 
-<div class="cards">
-<div class="card"><div class="v">20</div><div class="l">businesses</div></div>
-<div class="card"><div class="v">93</div><div class="l">reviews, busiest firm</div></div>
-<div class="card"><div class="v">4</div><div class="l">with no website</div></div>
-<div class="card"><div class="v">43%</div><div class="l">activity held by top 3</div></div>
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:34px 0 8px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:15px 16px}
+.stat .v{font-size:1.75rem;font-weight:800;letter-spacing:-.03em;line-height:1}
+.stat .l{color:var(--dim);font-size:.78rem;margin-top:6px}
+
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:26px;margin-top:34px}
+.panel h2{margin:0 0 4px;font-size:1.25rem;letter-spacing:-.02em}
+.panel p.hint{color:var(--dim);font-size:.9rem;margin:0 0 22px}
+
+label.fld{display:block;font-size:.74rem;text-transform:uppercase;letter-spacing:.1em;color:var(--dim);margin-bottom:8px;font-weight:700}
+select{width:100%;background:#0f151d;color:var(--ink);border:1px solid var(--line);
+ border-radius:11px;padding:13px 14px;font:inherit;font-size:.98rem}
+.controls{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px}
+@media(max-width:680px){.controls{grid-template-columns:1fr}}
+.slider-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:9px}
+.slider-head .now{font-size:1.35rem;font-weight:800;letter-spacing:-.02em}
+.slider-head .now small{font-size:.72rem;font-weight:600;color:var(--dim);letter-spacing:0}
+input[type=range]{-webkit-appearance:none;width:100%;height:6px;border-radius:99px;
+ background:linear-gradient(90deg,var(--accent) var(--pct,0%),#26313f var(--pct,0%));outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;
+ background:#fff;border:4px solid var(--accent);cursor:grab;box-shadow:0 2px 10px rgba(0,0,0,.5)}
+
+.verdict{margin-top:26px;padding:20px 22px;border-radius:15px;background:var(--accent-soft);
+ border:1px solid rgba(255,138,61,.4)}
+.verdict .rank{font-size:2.6rem;font-weight:900;letter-spacing:-.045em;line-height:1}
+.verdict .rank span{font-size:1rem;font-weight:700;color:var(--dim);letter-spacing:0}
+.verdict ul{margin:14px 0 0;padding-left:19px;color:var(--ink)}
+.verdict li{margin:.42em 0;font-size:.96rem}
+.verdict b{color:var(--accent)}
+
+.ladder{margin-top:8px}
+.row{display:grid;grid-template-columns:26px 1fr 62px;align-items:center;gap:12px;
+ padding:7px 9px;border-radius:10px;transition:background .16s}
+.row.you{background:var(--accent-soft);outline:1px solid rgba(255,138,61,.45)}
+.row.passed{opacity:.42}
+.row .pos{color:var(--dim);font-size:.8rem;text-align:right;font-variant-numeric:tabular-nums}
+.row .nm{font-size:.92rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.row .nm i{font-style:normal;color:var(--bad);font-size:.74rem;margin-left:7px;
+ border:1px solid rgba(229,105,91,.45);padding:1px 6px;border-radius:99px}
+.bar{height:7px;border-radius:99px;background:#26313f;position:relative;overflow:hidden}
+.bar span{position:absolute;inset:0;width:var(--w,0%);background:#3f5164;border-radius:99px;transition:width .3s}
+.row.you .bar span{background:var(--accent)}
+.row .ct{text-align:right;font-variant-numeric:tabular-nums;color:var(--dim);font-size:.85rem}
+
+footer{margin-top:44px;padding-top:22px;border-top:1px solid var(--line);color:var(--dim);font-size:.8rem;line-height:1.65}
+footer b{color:#a9bacd}
+</style></head><body><div class="wrap">
+
+<div class="eyebrow">Market brief · roofing · observed 9 September 2026</div>
+<h1>Every roofing company in St.&nbsp;Joseph, and where you sit among them.</h1>
+<p class="lede">Twenty companies serve this town. Between them they hold 640 public reviews —
+fewer than a single contractor earns in a city like Kansas City. Pick your company and
+drag the sliders to see exactly what it takes to move.</p>
+
+<div class="stats">
+  <div class="stat"><div class="v">20</div><div class="l">companies competing</div></div>
+  <div class="stat"><div class="v">93</div><div class="l">reviews held by the leader</div></div>
+  <div class="stat"><div class="v">4</div><div class="l">with no website at all</div></div>
+  <div class="stat"><div class="v">10</div><div class="l">with 9 reviews or fewer</div></div>
 </div>
 
-<h2>What stands out</h2>
-<ul><li><b>4 of 20 have no website at all.</b> Rose Roofing &amp; Tree Service, Joseph Contracting Siding Windows Doors Roofing, B&amp;K Roofing, SMGE Construction.</li><li><b>10 have nine reviews or fewer</b> — effectively invisible in local search.</li><li><b>The busiest firm has 93 reviews.</b> The top three hold 43% of all review activity in the trade here.</li><li><b>2 rate below 4.0.</b> Rose Roofing &amp; Tree Service, Joseph Contracting Siding Windows Doors Roofing.</li></ul>
+<div class="panel">
+  <h2>Find your position</h2>
+  <p class="hint">Everything below is public Google data. Move the sliders to model a different one.</p>
 
-<h2>The whole market</h2>
-<table><thead><tr><th></th><th>Business</th><th class="num">Reviews</th><th class="num">Rating</th><th>Website</th></tr></thead>
-<tbody><tr><td class='n'>1</td><td>A-1 Roofing Renovation and Construction</td><td class='num'>93</td><td class='num'>4.4</td><td>yes</td></tr><tr><td class='n'>2</td><td>Midwest Homes &amp; Restoration</td><td class='num'>93</td><td class='num'>4.8</td><td>yes</td></tr><tr><td class='n'>3</td><td>Peak 2 Peak Roofing &amp; Construction</td><td class='num'>92</td><td class='num'>5.0</td><td>yes</td></tr><tr><td class='n'>4</td><td>Epic Construction</td><td class='num'>78</td><td class='num'>4.9</td><td>yes</td></tr><tr><td class='n'>5</td><td>Full Roof Replacement Repairs And Seamless Guttering LLC</td><td class='num'>61</td><td class='num'>4.8</td><td>yes</td></tr><tr><td class='n'>6</td><td>Heritage Roofing and Gutters</td><td class='num'>51</td><td class='num'>4.7</td><td>yes</td></tr><tr><td class='n'>7</td><td>Rose Roofing &amp; Tree Service</td><td class='num'>46</td><td class='num'>3.0</td><td><b class=no>none</b></td></tr><tr><td class='n'>8</td><td>Barnes Roofing and Guttering</td><td class='num'>33</td><td class='num'>4.4</td><td>yes</td></tr><tr><td class='n'>9</td><td>Roberts Roofing Co</td><td class='num'>27</td><td class='num'>4.4</td><td>yes</td></tr><tr><td class='n'>10</td><td>Kingsmen Contracting LLC</td><td class='num'>15</td><td class='num'>4.8</td><td>yes</td></tr><tr><td class='n'>11</td><td>Joseph Contracting Siding Windows Doors Roofing</td><td class='num'>9</td><td class='num'>3.9</td><td><b class=no>none</b></td></tr><tr><td class='n'>12</td><td>Top Notch Roofing Solutions LLC</td><td class='num'>7</td><td class='num'>5.0</td><td>yes</td></tr><tr><td class='n'>13</td><td>High &amp; Tight Roofing - St. Joseph, MO</td><td class='num'>6</td><td class='num'>5.0</td><td>yes</td></tr><tr><td class='n'>14</td><td>Superior Exteriors of Northwest Missouri</td><td class='num'>6</td><td class='num'>4.2</td><td>yes</td></tr><tr><td class='n'>15</td><td>TNR Roofing LLC</td><td class='num'>6</td><td class='num'>5.0</td><td>yes</td></tr><tr><td class='n'>16</td><td>B&amp;K Roofing</td><td class='num'>5</td><td class='num'>5.0</td><td><b class=no>none</b></td></tr><tr><td class='n'>17</td><td>J. Hatheway Roofing</td><td class='num'>5</td><td class='num'>4.6</td><td>yes</td></tr><tr><td class='n'>18</td><td>SMGE Construction</td><td class='num'>3</td><td class='num'>5.0</td><td><b class=no>none</b></td></tr><tr><td class='n'>19</td><td>Arrowhead Construction</td><td class='num'>2</td><td class='num'>5.0</td><td>yes</td></tr><tr><td class='n'>20</td><td>Hausman Metal Works &amp; Roofing</td><td class='num'>2</td><td class='num'>5.0</td><td>yes</td></tr></tbody></table>
+  <label class="fld" for="biz">Your company</label>
+  <select id="biz"></select>
+
+  <div class="controls">
+    <div>
+      <div class="slider-head"><label class="fld" style="margin:0">Reviews</label>
+        <div class="now" id="rvVal">0</div></div>
+      <input type="range" id="rv" min="0" max="160" step="1">
+    </div>
+    <div>
+      <div class="slider-head"><label class="fld" style="margin:0">Star rating</label>
+        <div class="now" id="rtVal">0.0</div></div>
+      <input type="range" id="rt" min="30" max="50" step="1">
+    </div>
+  </div>
+
+  <div class="verdict">
+    <div class="rank" id="rank">—</div>
+    <ul id="notes"></ul>
+  </div>
+</div>
+
+<div class="panel">
+  <h2>The whole market</h2>
+  <p class="hint">Bar length is review count. Your company moves live as you drag.</p>
+  <div class="ladder" id="ladder"></div>
+</div>
 
 <footer>
-Compiled from public Google Business Profile listings on 2026-09-09. Review counts are a
-proxy for public activity — they are not revenue, job volume, or market share, and a
-business with few reviews may be busy without asking for them. Nothing here was
-supplied by any business listed.<br><br>
+<b>Where this comes from.</b> Public Google Business Profile listings for roofing companies
+in St. Joseph, Missouri, read on 9 September 2026. Nothing here was supplied by any company
+listed, and nothing is private.<br><br>
+<b>What review counts do and don't mean.</b> They measure how often customers were asked and
+answered — not revenue, not jobs completed, not crew size. A busy company that never asks for
+reviews will look small here. That is worth knowing rather than assuming.<br><br>
 Bonfire Growth Partners · 2132 Westlake Ave N #124, Seattle, WA 98109
 </footer>
-</div></body></html>
+</div>
+
+<script>
+const DATA = [{"name": "A-1 Roofing Renovation and Construction", "reviews": 93, "rating": 4.4, "website": "https://roofsbya1.com/", "address": "2412 S Belt Hwy, St Joseph, MO 64503, USA"}, {"name": "High & Tight Roofing - St. Joseph, MO", "reviews": 6, "rating": 5.0, "website": "https://hightightroofing.com/saint-joseph-mo/", "address": "2400 Frederick Ave #316, St Joseph, MO 64506, USA"}, {"name": "Roberts Roofing Co", "reviews": 27, "rating": 4.4, "website": "http://roberts-roofing.com/", "address": "1601 Buchanan Ave, St Joseph, MO 64501, USA"}, {"name": "Midwest Homes & Restoration", "reviews": 93, "rating": 4.8, "website": "https://midwesthomesandrestoration.com/", "address": "4221 Mitchell Ave, St Joseph, MO 64507, USA"}, {"name": "Peak 2 Peak Roofing & Construction", "reviews": 92, "rating": 5.0, "website": "https://www.peak2peakroofing.com/", "address": "7000 MO-371, St Joseph, MO 64504, USA"}, {"name": "Epic Construction", "reviews": 78, "rating": 4.9, "website": "https://trustecc.com/", "address": "4704 St Joseph Ave, St Joseph, MO 64505, USA"}, {"name": "Barnes Roofing and Guttering", "reviews": 33, "rating": 4.4, "website": "https://www.barnesroofingandguttering.com/?utm_source=google&utm_medium=organic&utm_campaign=gbp", "address": "5810 State Hwy K, St Joseph, MO 64505, USA"}, {"name": "TNR Roofing LLC", "reviews": 6, "rating": 5.0, "website": "https://tnrroof.com/", "address": "3613 Faraon St, St Joseph, MO 64506, USA"}, {"name": "Heritage Roofing and Gutters", "reviews": 51, "rating": 4.7, "website": "https://heritagegutterpros.com/?utm_source=google&utm_medium=gmb&utm_campaign=seo", "address": "20052 Co Rd 380, St Joseph, MO 64505, USA"}, {"name": "Full Roof Replacement Repairs And Seamless Guttering LLC", "reviews": 61, "rating": 4.8, "website": "https://fullroofreplaceandrepair.com/", "address": "2913 burnside avenue 104 Dennis street Wathena ks, St Joseph, MO 64505, USA"}, {"name": "Arrowhead Construction", "reviews": 2, "rating": 5.0, "website": "https://www.facebook.com/profile.php?id=100083111569920", "address": "144 SE Turner Rd, St Joseph, MO 64504, USA"}, {"name": "B&K Roofing", "reviews": 5, "rating": 5.0, "website": "", "address": "3801 Oakland Ave #103c, St Joseph, MO 64506, USA"}, {"name": "Hausman Metal Works & Roofing", "reviews": 2, "rating": 5.0, "website": "https://www.hausmans.com/", "address": "1229 S 15th St, St Joseph, MO 64503, USA"}, {"name": "Kingsmen Contracting LLC", "reviews": 15, "rating": 4.8, "website": "https://www.kingsmencontractingllc.com/", "address": "620 Francis St Ste 214, St Joseph, MO 64501, USA"}, {"name": "Superior Exteriors of Northwest Missouri", "reviews": 6, "rating": 4.2, "website": "http://www.superiorexteriorsnwmo.com/", "address": "5801 S 22nd St, St Joseph, MO 64503, USA"}, {"name": "Joseph Contracting Siding Windows Doors Roofing", "reviews": 9, "rating": 3.9, "website": "", "address": "2616 1/2, 2616 N Belt Hwy, St Joseph, MO 64506, USA"}, {"name": "Rose Roofing & Tree Service", "reviews": 46, "rating": 3.0, "website": "", "address": "713 S 36th St, St Joseph, MO 64507, USA"}, {"name": "SMGE Construction", "reviews": 3, "rating": 5.0, "website": "", "address": "10543 Co Rd 375 LOT 4, St Joseph, MO 64505, USA"}, {"name": "Top Notch Roofing Solutions LLC", "reviews": 7, "rating": 5.0, "website": "http://www.topnotchroofingsolutionsllc.com/", "address": "5 Bluebird Dr, Agency, MO 64401, USA"}, {"name": "J. Hatheway Roofing", "reviews": 5, "rating": 4.6, "website": "https://www.jhathewayroofing.com/", "address": "2302 N 7th St, St Joseph, MO 64505, USA"}];
+const base = DATA.map(b => ({...b, reviews: +b.reviews || 0, rating: +b.rating || 0}));
+
+const sel = document.getElementById('biz');
+base.slice().sort((a,b)=>b.reviews-a.reviews).forEach((b,i)=>{
+  const o = document.createElement('option');
+  o.value = b.name; o.textContent = b.name;
+  sel.appendChild(o);
+});
+
+const rv = document.getElementById('rv'), rt = document.getElementById('rt');
+const rvVal = document.getElementById('rvVal'), rtVal = document.getElementById('rtVal');
+const rankEl = document.getElementById('rank'), notesEl = document.getElementById('notes');
+const ladder = document.getElementById('ladder');
+let me = null, startReviews = 0, startRating = 0;
+
+function paintSlider(el){
+  const pct = (el.value - el.min) / (el.max - el.min) * 100;
+  el.style.setProperty('--pct', pct + '%');
+}
+
+function pick(name){
+  me = base.find(b => b.name === name);
+  sel.value = name;
+  startReviews = me.reviews; startRating = me.rating;
+  rv.value = me.reviews; rt.value = Math.round(me.rating * 10);
+  render();
+}
+
+function render(){
+  const reviews = +rv.value, rating = +rt.value / 10;
+  rvVal.innerHTML = reviews + ' <small>reviews</small>';
+  rtVal.innerHTML = rating.toFixed(1) + ' <small>stars</small>';
+  paintSlider(rv); paintSlider(rt);
+
+  const board = base.map(b => b.name === me.name ? {...b, reviews, rating, you:true} : {...b});
+  board.sort((a,b) => b.reviews - a.reviews || b.rating - a.rating);
+  const pos = board.findIndex(b => b.you) + 1;
+  const max = Math.max(...board.map(b => b.reviews), 1);
+
+  rankEl.innerHTML = '#' + pos + ' <span>of ' + board.length + ' in St. Joseph</span>';
+
+  const startBoard = base.slice().sort((a,b)=>b.reviews-a.reviews||b.rating-a.rating);
+  const startPos = startBoard.findIndex(b => b.name === me.name) + 1;
+  const notes = [];
+
+  if (pos < startPos) {
+    const passed = startBoard.slice(pos - 1, startPos - 1).map(b => b.name);
+    notes.push('That moves you up <b>' + (startPos - pos) + '</b> ' +
+      (startPos-pos===1?'place':'places') + ', past <b>' + passed.slice(0,3).join('</b>, <b>') + '</b>.');
+  } else if (pos > startPos) {
+    notes.push('That drops you <b>' + (pos - startPos) + '</b> ' + (pos-startPos===1?'place':'places') + '.');
+  } else {
+    notes.push('You are <b>#' + pos + '</b> today with <b>' + startReviews + '</b> reviews.');
+  }
+
+  const above = board[pos - 2];
+  if (above) {
+    const gap = above.reviews - reviews + 1;
+    notes.push('<b>' + gap + ' more review' + (gap===1?'':'s') + '</b> passes ' + above.name + '.');
+  } else {
+    notes.push('Nobody in this town is ahead of you.');
+  }
+
+  const lead = board[0];
+  if (!board[0].you) notes.push('The leader, ' + lead.name + ', holds <b>' + lead.reviews + '</b>.');
+
+  if (me.website) {
+    notes.push('You have a website. <b>Four companies here do not</b> — they are invisible to anyone searching.');
+  } else {
+    notes.push('<b>You have no website.</b> Three others here are in the same position; every company above you does.');
+  }
+  notesEl.innerHTML = notes.map(n => '<li>' + n + '</li>').join('');
+
+  ladder.innerHTML = board.map((b,i) => {
+    const cls = ['row', b.you ? 'you' : '', (!b.you && i < startPos - 1 && i >= pos - 1) ? 'passed' : ''].join(' ');
+    return '<div class="' + cls + '">' +
+      '<div class="pos">' + (i+1) + '</div>' +
+      '<div><div class="nm">' + b.name + (b.website ? '' : ' <i>no website</i>') + '</div>' +
+      '<div class="bar"><span style="--w:' + (b.reviews / max * 100) + '%"></span></div></div>' +
+      '<div class="ct">' + b.reviews + '</div></div>';
+  }).join('');
+}
+
+sel.addEventListener('change', e => pick(e.target.value));
+rv.addEventListener('input', render);
+rt.addEventListener('input', render);
+pick(sel.options[6].value);
+</script>
+</body></html>
