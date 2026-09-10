@@ -207,6 +207,13 @@ function render(){
 sel.addEventListener('change', e => pick(e.target.value));
 rv.addEventListener('input', render);
 rt.addEventListener('input', render);
-pick(sel.options[6].value);
+// Each prospect gets a link that opens on their own company:
+//   ...?you=Rose%20Roofing%20%26%20Tree%20Service
+// Matching is loose so a shortened name in a URL still finds the business.
+const wanted = new URLSearchParams(location.search).get('you');
+const found = wanted && base.find(b =>
+  b.name.toLowerCase().includes(wanted.toLowerCase()) ||
+  wanted.toLowerCase().includes(b.name.toLowerCase()));
+pick(found ? found.name : sel.options[0].value);
 </script>
 </body></html>
