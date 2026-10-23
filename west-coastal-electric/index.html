@@ -3,137 +3,210 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Home | West Coastal Electric</title>
-<meta name="description" content="Residential electrician serving Redondo Beach and coastal communities.">
+<title>West Coastal Electric | Redondo Beach residential electrician</title>
+<meta name="description" content="Licensed residential electrician for Redondo Beach, the South Bay, and coastal homes to Malibu.">
 <style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap');
 :root{
-  --ink:#0b1c28;--paper:#f4f7f8;--sea:#0e6b7a;--sea-deep:#0a4f5a;
-  --foam:#fff;--muted:#5a6b73;--line:#c9d5da;
-  --font:"Segoe UI",system-ui,-apple-system,sans-serif;
+  --navy:#07131f;
+  --navy-2:#0d2133;
+  --ink:#14202b;
+  --sand:#f4efe6;
+  --sand-2:#ebe3d6;
+  --foam:#fffdf9;
+  --copper:#c56a2d;
+  --copper-deep:#9a4f1c;
+  --muted:#5c6b76;
+  --line:rgba(20,32,43,.12);
+  --serif:"Instrument Serif",Georgia,serif;
+  --sans:"DM Sans",system-ui,sans-serif;
 }
 *{box-sizing:border-box}
-body{margin:0;font-family:var(--font);color:var(--ink);background:var(--paper);line-height:1.55}
-a{color:var(--sea-deep)}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--sand);line-height:1.55;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
-.wrap{width:min(1120px,calc(100% - 40px));margin:0 auto}
-.topbar{background:var(--ink);color:#d7e4ea;font-size:.85rem}
-.topbar .wrap{display:flex;justify-content:space-between;gap:16px;padding:10px 0;flex-wrap:wrap}
-.topbar a{color:#fff;text-decoration:none;font-weight:600}
-header.site{background:var(--foam);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
-header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 0}
-.brand{display:flex;flex-direction:column;gap:2px;text-decoration:none;color:inherit}
-.brand strong{font-size:1.15rem;letter-spacing:.02em}
-.brand span{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
-nav.primary{display:flex;gap:8px 18px;flex-wrap:wrap;align-items:center}
-nav.primary a{text-decoration:none;color:var(--ink);font-weight:600;font-size:.95rem;white-space:nowrap}
-nav.primary a:hover{color:var(--sea)}
-.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--sea);color:#fff!important;text-decoration:none;font-weight:700;padding:12px 18px;border-radius:999px}
-.btn:hover{background:var(--sea-deep)}
-.btn.ghost{background:transparent;color:var(--ink)!important;border:1px solid var(--line)}
-.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:56px 0 40px}
-.hero h1{font-size:clamp(2.4rem,5vw,3.6rem);line-height:1.05;letter-spacing:-.03em;margin:12px 0 16px}
-.hero .lede{font-size:1.15rem;color:var(--muted);max-width:36rem}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-.hero-frame{position:relative}
-.hero-frame img{width:100%;height:min(460px,55vw);object-fit:cover;border-radius:22px;box-shadow:0 24px 50px rgba(11,28,40,.18)}
-.badge{position:absolute;left:16px;bottom:16px;background:rgba(11,28,40,.88);color:#fff;padding:10px 14px;border-radius:12px;font-size:.85rem}
-.section{padding:28px 0 56px}
-.section h2{font-size:clamp(1.6rem,3vw,2.1rem);margin:0 0 10px}
-.section .intro{color:var(--muted);max-width:42rem;margin:0 0 28px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.service{background:var(--foam);border:1px solid var(--line);border-radius:18px;padding:22px;min-height:160px}
-.service h3{margin:0 0 8px;font-size:1.1rem}
-.service p{margin:0;color:var(--muted);font-size:.95rem}
-.band{background:linear-gradient(135deg,var(--sea-deep),var(--sea));color:#eaf6f8;padding:48px 0;margin:12px 0 0}
-.band h2{color:#fff;margin:0 0 10px}
-.band p{margin:0;max-width:40rem;opacity:.92}
-.gallery{display:grid;grid-template-columns:2fr 1fr 1fr;gap:14px}
-.gallery img{width:100%;height:220px;object-fit:cover;border-radius:16px}
-.gallery img.tall{height:454px}
-.meta{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:start}
-.meta-card{background:var(--foam);border:1px solid var(--line);border-radius:18px;padding:24px}
-.meta-card dt{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-top:14px}
-.meta-card dd{margin:4px 0 0;font-weight:700}
-.page-hero{padding:48px 0 24px;border-bottom:1px solid var(--line);margin-bottom:28px}
-.page-hero h1{font-size:clamp(2rem,4vw,2.8rem);margin:8px 0 12px;line-height:1.1}
-.prose{max-width:68ch;color:var(--muted);font-size:1.05rem}
-.prose strong{color:var(--ink)}
-.kicker{margin:0;color:var(--sea);font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:.8rem}
-footer.site{border-top:1px solid var(--line);padding:36px 0 48px;margin-top:24px;color:var(--muted);font-size:.9rem}
-footer.site strong{color:var(--ink)}
-.disclaimer{font-size:.78rem;margin-top:14px;max-width:60ch}
+a{color:inherit}
+.wrap{width:min(1180px,calc(100% - 48px));margin:0 auto}
+.top{background:var(--navy);color:rgba(255,253,249,.72);font-size:.8rem;letter-spacing:.04em}
+.top .wrap{display:flex;justify-content:space-between;gap:16px;padding:10px 0;flex-wrap:wrap}
+.top a{color:var(--foam);text-decoration:none;font-weight:600}
+.mast{background:rgba(244,239,230,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40}
+.mast .wrap{display:flex;align-items:center;justify-content:space-between;gap:28px;padding:16px 0}
+.brand{text-decoration:none;display:flex;flex-direction:column;gap:2px}
+.brand em{font-family:var(--serif);font-style:normal;font-size:1.55rem;letter-spacing:-.01em;color:var(--navy);line-height:1}
+.brand span{font-size:.72rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);font-weight:600}
+nav.primary{display:flex;gap:4px 22px;flex-wrap:wrap;align-items:center}
+nav.primary a{text-decoration:none;font-size:.92rem;font-weight:600;color:var(--ink);white-space:nowrap;padding:6px 0;border-bottom:2px solid transparent}
+nav.primary a[aria-current="page"],nav.primary a:hover{border-bottom-color:var(--copper);color:var(--navy)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--copper);color:var(--foam)!important;text-decoration:none;font-weight:700;font-size:.95rem;padding:14px 22px;border-radius:4px;border:0;letter-spacing:.01em}
+.btn:hover{background:var(--copper-deep)}
+.btn.ghost{background:transparent;color:var(--foam)!important;border:1px solid rgba(255,253,249,.55)}
+.btn.dark{background:var(--navy);color:var(--foam)!important}
+.btn.dark:hover{background:var(--navy-2)}
+.hero{position:relative;min-height:min(84vh,720px);display:grid;align-items:end;color:var(--foam);overflow:hidden;background:var(--navy)}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:68% 18%;filter:saturate(.95) contrast(1.08) brightness(1.12)}
+.hero-bg::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(100deg,rgba(7,19,31,.78) 0%,rgba(7,19,31,.45) 38%,rgba(7,19,31,.18) 62%,rgba(7,19,31,.35) 100%),
+  linear-gradient(to top,rgba(7,19,31,.7) 0%,rgba(7,19,31,.15) 42%,transparent 70%)}
+.hero-copy{position:relative;z-index:2;padding:72px 0 56px;max-width:36rem}
+.kicker{margin:0 0 14px;font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#e8a06a}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.7rem,5.8vw,4.35rem);line-height:.98;letter-spacing:-.02em;margin:0 0 18px;text-shadow:0 2px 24px rgba(7,19,31,.35)}
+.hero .lede{font-size:1.1rem;color:rgba(255,253,249,.9);max-width:30rem;margin:0;text-shadow:0 1px 12px rgba(7,19,31,.4)}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.proof{display:flex;gap:28px;flex-wrap:wrap;margin-top:34px;padding-top:20px;border-top:1px solid rgba(255,253,249,.22);font-size:.85rem;color:rgba(255,253,249,.75)}
+.proof strong{display:block;color:var(--foam);font-size:1.05rem;font-weight:700}
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:88px 0}
+.section-label{margin:0 0 10px;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--copper)}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,3.6vw,2.85rem);line-height:1.08;letter-spacing:-.02em;margin:0 0 16px;color:var(--navy)}
+.prose{color:var(--muted);font-size:1.05rem;max-width:38rem}
+.prose p{margin:0 0 14px}
+.media{position:relative}
+.media img{width:100%;height:min(520px,70vw);object-fit:cover;object-position:center 15%;border-radius:2px}
+.media .cap{position:absolute;left:16px;bottom:16px;background:rgba(7,19,31,.88);color:var(--foam);padding:10px 14px;font-size:.8rem;letter-spacing:.04em}
+.work-list{list-style:none;margin:28px 0 0;padding:0;border-top:1px solid var(--line)}
+.work-list li{display:grid;grid-template-columns:56px 1fr;gap:18px;padding:22px 0;border-bottom:1px solid var(--line)}
+.work-list .num{font-family:var(--serif);font-size:1.6rem;color:var(--copper);line-height:1}
+.work-list h3{margin:0 0 6px;font-size:1.08rem;color:var(--navy)}
+.work-list p{margin:0;color:var(--muted);font-size:.95rem}
+.locale{position:relative;color:var(--foam);overflow:hidden;min-height:380px;display:grid;align-items:center}
+.locale-bg{position:absolute;inset:0}
+.locale-bg img{width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(1.15) brightness(.78) contrast(1.05)}
+.locale-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,19,31,.72) 0%,rgba(7,19,31,.35) 55%,rgba(7,19,31,.25) 100%)}
+.locale .wrap{position:relative;z-index:2;padding:64px 0}
+.locale h2{color:var(--foam)}
+.locale p{color:rgba(255,253,249,.9);max-width:36rem;font-size:1.08rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chips span{border:1px solid rgba(255,253,249,.4);padding:8px 12px;font-size:.82rem;letter-spacing:.03em;border-radius:999px;color:var(--foam);background:rgba(7,19,31,.25)}
+.jobs{padding:88px 0;background:var(--foam)}
+.jobs-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.jobs-grid img{width:100%;height:320px;object-fit:cover}
+.jobs-head{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:end;margin-bottom:28px}
+.jobs-head .note{color:var(--muted);font-size:.95rem;border-left:3px solid var(--copper);padding-left:16px}
+.cta{background:var(--navy);color:var(--foam);padding:72px 0}
+.cta .wrap{display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:center}
+.cta h2{color:var(--foam)}
+.cta p{color:rgba(255,253,249,.75);margin:0 0 8px}
+.cta dl{margin:0}
+.cta dt{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,253,249,.5);margin-top:14px}
+.cta dd{margin:4px 0 0;font-size:1.15rem;font-weight:600}
+.cta a{color:var(--foam);text-decoration:none;border-bottom:1px solid rgba(197,106,45,.7)}
+footer.site{background:var(--sand-2);padding:40px 0 52px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+footer.site strong{color:var(--navy);font-family:var(--serif);font-size:1.2rem;font-weight:400}
+footer.site a{color:var(--muted)}
+.disclaimer{font-size:.76rem;margin-top:16px;max-width:62ch;opacity:.85}
+.page-hero{padding:64px 0 28px;border-bottom:1px solid var(--line);margin-bottom:8px;background:transparent}
+.page-hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.3rem,4.5vw,3.4rem);line-height:1.05;margin:8px 0 14px;color:var(--navy)}
+.page-split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;padding:48px 0 80px}
+.page-split .media img{height:min(560px,75vw);object-fit:cover;object-position:center 20%}
+.standards-box{max-width:44rem;background:var(--foam);padding:32px 36px;border-left:3px solid var(--copper);margin:40px 0 80px}
+.standards-box p{margin:0;color:var(--muted);font-size:1.08rem}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:28px 0 64px;width:100%}
+.gallery img{width:100%;height:340px;object-fit:cover;object-position:center 20%}
 @media(max-width:900px){
-  .hero,.services,.meta,.gallery{grid-template-columns:1fr}
-  .gallery img,.gallery img.tall{height:240px}
+  .split,.jobs-head,.cta .wrap,.page-split,.gallery,.jobs-grid{grid-template-columns:1fr}
+  .hero{min-height:70vh}
+  .hero-copy{padding:56px 0 44px}
+  .media img,.page-split .media img{height:360px}
 }
 </style>
 </head>
 <body>
-<div class="topbar"><div class="wrap">
-  <span>Redondo Beach · License 598426</span>
+<div class="top"><div class="wrap">
+  <span>Redondo Beach · CA License 598426</span>
   <span><a href="tel:3108094409">310-809-4409</a> · <a href="mailto:befrenk@cox.net">befrenk@cox.net</a></span>
 </div></div>
-<header class="site"><div class="wrap">
-  <a class="brand" href="index.html"><strong>West Coastal Electric</strong><span>Residential electrical · South Bay &amp; coast</span></a>
+<header class="mast"><div class="wrap">
+  <a class="brand" href="index.html"><em>West Coastal Electric</em><span>Residential · South Bay &amp; coast</span></a>
   <nav class="primary" aria-label="Primary"><a href="index.html" aria-current="page">Home</a><a href="services/index.html">Services</a><a href="projects/index.html">Projects</a><a href="standards/index.html">Standards</a><a href="contact/index.html">Contact</a></nav>
 </div></header>
-
 <main>
-<section class="wrap hero">
-  <div>
-    <p class="kicker">Coastal residential electrician</p>
-    <h1>Clean, code-ready electrical work for Redondo Beach and the coast</h1>
-    <p class="lede">West Coastal Electric handles new circuits, service upgrades, lighting, remodeling, and troubleshooting for homes from the South Bay to Malibu.</p>
+
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true"><img src="assets/82.jpg" alt=""></div>
+  <div class="wrap hero-copy">
+    <p class="kicker">Licensed residential electrician</p>
+    <h1>Electrical work built for coastal homes.</h1>
+    <p class="lede">West Coastal Electric brings clean installs, service upgrades, and remodel wiring to Redondo Beach and the shoreline communities that run north to Malibu.</p>
     <div class="hero-actions">
       <a class="btn" href="tel:3108094409">Call 310-809-4409</a>
-      <a class="btn ghost" href="contact/index.html">Email befrenk@cox.net</a>
+      <a class="btn ghost" href="contact/index.html">Request a visit</a>
+    </div>
+    <div class="proof">
+      <div><strong>598426</strong>California license</div>
+      <div><strong>South Bay → Malibu</strong>Coastal service area</div>
+      <div><strong>UL Listed</strong>Code-ready installs</div>
     </div>
   </div>
-  <div class="hero-frame">
-    <img src="assets/112c.jpg" alt="Coastal residential electrical project by West Coastal Electric" width="1029" height="921">
-    <div class="badge">Project work along the coast</div>
-  </div>
 </section>
-<section class="wrap section">
-  <h2>What they do</h2>
-  <p class="intro">From their public pages: residential installs, remodeling support, and specialty systems.</p>
-  <div class="services">
-    <article class="service"><h3>Residential electrical</h3><p>New circuits, electrical service upgrades, remodeling work, and troubleshooting.</p></article>
-    <article class="service"><h3>Lighting</h3><p>Track and recessed lighting, security lighting, yard and pathway lighting, photocell controls.</p></article>
-    <article class="service"><h3>Specialty systems</h3><p>Subpanels, underground conduit, intercoms, sound systems, security systems, electric gates, and closed-circuit television.</p></article>
-  </div>
-</section>
-<section class="band"><div class="wrap">
-  <h2>South Bay to Malibu</h2>
-  <p>Past residential work described in Redondo Beach, Manhattan Beach, Malibu, Carbon Canyon, Broad Beach, Las Flores Canyon, and areas near Zuma Beach.</p>
-</div></section>
-<section class="wrap section">
-  <h2>From their project photos</h2>
-  <p class="intro">Project photos from their public site, hosted on this preview so the gallery stays up.</p>
-  <div class="gallery">
-    <img class="tall" src="assets/111.jpg" alt="West Coastal Electric project photo" width="667" height="500">
-    <img src="assets/82.jpg" alt="West Coastal Electric project photo" width="640" height="480">
-    <img src="assets/83.jpg" alt="West Coastal Electric project photo" width="640" height="480">
-  </div>
-</section>
-<section class="wrap section meta">
-  <div>
-    <h2>Standards they publish</h2>
-    <p class="prose">West Coastal Electric states that it uses UL Listed equipment and fixtures, installs them according to manufacturer specifications, and works to electrical code standards.</p>
-  </div>
-  <dl class="meta-card">
-    <dt>Phone</dt><dd><a href="tel:3108094409">310-809-4409</a></dd>
-    <dt>Email</dt><dd><a href="mailto:befrenk@cox.net">befrenk@cox.net</a></dd>
-    <dt>License</dt><dd>598426</dd>
-    <dt>Mail</dt><dd>PO Box 4096, Redondo Beach, CA</dd>
-  </dl>
-</section>
-</main>
 
+<section class="wrap split">
+  <div class="copy">
+    <p class="section-label">The work</p>
+    <h2>Circuits, panels, and lighting that hold up by the water.</h2>
+    <div class="prose"><p>Homes along the South Bay and Malibu coast need careful service work: salt air, older panels, remodel expansions, and outdoor lighting that has to survive weather.</p></div>
+    <ol class="work-list">
+      <li><span class="num">01</span><div><h3>Residential electrical</h3><p>New circuits, service upgrades, remodeling support, and troubleshooting.</p></div></li>
+      <li><span class="num">02</span><div><h3>Lighting</h3><p>Track and recessed lighting, security lighting, yard and pathway lighting, photocell controls.</p></div></li>
+      <li><span class="num">03</span><div><h3>Specialty systems</h3><p>Subpanels, underground conduit, intercoms, sound, security, electric gates, and CCTV.</p></div></li>
+    </ol>
+  </div>
+  <div class="media">
+    <img src="assets/83.jpg" alt="Electrician on a residential framing job with conduit and junction boxes">
+    <div class="cap">Rough-in ready for inspection</div>
+  </div>
+</section>
+
+<section class="locale">
+  <div class="locale-bg" aria-hidden="true"><img src="assets/palos.jpg" alt=""></div>
+  <div class="wrap">
+    <p class="section-label" style="color:#e8a06a">Service area</p>
+    <h2>South Bay to Malibu.</h2>
+    <p>Based in Redondo Beach, with residential work across Manhattan Beach, Malibu, Carbon Canyon, Broad Beach, Las Flores Canyon, and near Zuma Beach.</p>
+    <div class="chips">
+      <span>Redondo Beach</span><span>Manhattan Beach</span><span>Malibu</span><span>Broad Beach</span><span>Zuma</span>
+    </div>
+  </div>
+</section>
+
+<section class="jobs">
+  <div class="wrap">
+    <div class="jobs-head">
+      <div>
+        <p class="section-label">On the job</p>
+        <h2>Framing, conduit, and panels — not a stock template.</h2>
+      </div>
+      <p class="note">Photos from the shop’s public pages: electricians on residential rough-ins with junction boxes, MC cable, and open panels.</p>
+    </div>
+    <div class="jobs-grid">
+      <img src="assets/82.jpg" alt="Electrician during residential rough-in with conduit">
+      <img src="assets/83.jpg" alt="Electrician beside panel work on a framing job">
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <div>
+      <p class="section-label" style="color:#e8a06a">Talk to the shop</p>
+      <h2>Ready for a clean electrical visit?</h2>
+      <p>Call or email for residential work in Redondo Beach and along the coast.</p>
+      <p style="margin-top:22px"><a class="btn" href="tel:3108094409">Call 310-809-4409</a></p>
+    </div>
+    <dl>
+      <dt>Phone</dt><dd><a href="tel:3108094409">310-809-4409</a></dd>
+      <dt>Email</dt><dd><a href="mailto:befrenk@cox.net">befrenk@cox.net</a></dd>
+      <dt>License</dt><dd>598426</dd>
+      <dt>Mail</dt><dd>PO Box 4096, Redondo Beach, CA</dd>
+    </dl>
+  </div>
+</section>
+
+</main>
 <footer class="site"><div class="wrap">
   <strong>West Coastal Electric</strong>
-  <p>PO Box 4096, Redondo Beach, CA · 310-809-4409 · befrenk@cox.net</p>
-  <p class="disclaimer">Private concept generated from the business&apos;s publicly available site content and assets. Not the official website; no affiliation or authorization is implied.</p>
+  <p>PO Box 4096, Redondo Beach, CA · <a href="tel:3108094409">310-809-4409</a> · <a href="mailto:befrenk@cox.net">befrenk@cox.net</a></p>
+  <p class="disclaimer">Private concept generated from the business's publicly available site content and assets. Not the official website; no affiliation or authorization is implied.</p>
 </div></footer>
 </body>
 </html>
