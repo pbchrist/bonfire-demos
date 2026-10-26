@@ -94,7 +94,8 @@ h1,h2,h3{font-family:var(--display);font-stretch:112%;letter-spacing:-.015em;mar
 .n4 figure:first-child{grid-column:1/-1;grid-row:span 2}
 .n5{grid-template-columns:2fr 1fr 1fr}.n5 figure:first-child{grid-row:span 2}
 .n5 figure:nth-child(n+4){grid-row:auto}
-.mosaic.small{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));grid-auto-rows:auto}
+.mosaic.small{grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:auto}
+.mosaic.small.n4,.mosaic.small.n8{grid-template-columns:repeat(4,minmax(0,1fr))}
 .mosaic.small figure{aspect-ratio:3/4}
 .mosaic.small figure:first-child{grid-column:auto;grid-row:auto}
 .types{margin-top:40px;display:grid;grid-template-columns:minmax(0,3fr) minmax(0,9fr);gap:24px;align-items:start}
@@ -186,7 +187,7 @@ h1,h2,h3{font-family:var(--display);font-stretch:112%;letter-spacing:-.015em;mar
   .n3 figure:not(:first-child),.n5 figure:not(:first-child){grid-column:auto;grid-row:auto}
   .n4 figure:first-child{grid-column:1/-1}
   .n4 figure:last-child{grid-column:1/-1}
-  .mosaic.small{grid-template-columns:1fr 1fr;grid-auto-rows:auto}
+  .mosaic.small,.mosaic.small.n4,.mosaic.small.n8{grid-template-columns:1fr 1fr;grid-auto-rows:auto}
   .mosaic.small figure:first-child{grid-column:auto;grid-row:auto}
   .mosaic figcaption{font-size:12.5px;padding:5px 9px}
   .panel{grid-template-columns:1fr;padding:4px 20px}
