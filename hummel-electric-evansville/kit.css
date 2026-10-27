@@ -1,14 +1,20 @@
-/* Electrician kit. Archivo (expanded) + Source Sans 3, cool panel-gray paper, square corners,
-   accent used as a rule/breaker stripe rather than pills. Three hero layouts: plate / split / band. */
-:root{--display:"Archivo",system-ui,sans-serif;--body:"Source Sans 3",system-ui,sans-serif;
-  --bg:#f4f5f6;--bg-2:#e9ecef;--card:#fff;--ink:#14171c;--muted:#5a626d;--line:#d6dbe0;--r:4px}
+/* SiteFactory kit: one stylesheet for every trade.
+   Per business: skin (type + corners + paper), theme (light/dark), layout (plate/split/band), accent.
+   Per trade: only the service mark (numbers or breaker marks) via .mark-*. */
+:root{--bg:#f4f5f6;--bg-2:#e9ecef;--card:#fff;--ink:#14171c;--muted:#5a626d;--line:#d6dbe0;--r:4px;--pill:4px;--stretch:100%;
+  --display:system-ui,sans-serif;--body:system-ui,sans-serif}
+.sk-panel{--display:"Archivo",system-ui,sans-serif;--body:"Source Sans 3",system-ui,sans-serif;--stretch:112%}
+.sk-warm{--display:"Bricolage Grotesque",system-ui,sans-serif;--body:"Public Sans",system-ui,sans-serif;
+  --bg:#f7f3ec;--bg-2:#efe8dc;--line:#e2d9ca;--muted:#5a6067;--ink:#1a1e23;--r:14px;--pill:999px}
+.sk-slab{--display:"Roboto Slab",Georgia,serif;--body:"Inter",system-ui,sans-serif;
+  --bg:#f6f4ef;--bg-2:#ebe7de;--line:#ddd7cb;--muted:#5d5a54;--ink:#1c1a17;--r:8px;--pill:8px}
 .th-dark{--bg:#0f1012;--bg-2:#16181b;--card:#1b1d21;--ink:#eceef0;--muted:#a4abb4;--line:#2c3036}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 17.5px/1.6 var(--body);-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%}
 a{color:inherit}
-h1,h2,h3{font-family:var(--display);font-stretch:112%;letter-spacing:-.015em;margin:0;line-height:1.06}
+h1,h2,h3{font-family:var(--display);font-stretch:var(--stretch);letter-spacing:-.015em;margin:0;line-height:1.06}
 .wrap{width:min(1200px,calc(100% - 64px));margin:0 auto}
 
 /* header: accent rule on top, logo or wordmark */
@@ -22,13 +28,14 @@ h1,h2,h3{font-family:var(--display);font-stretch:112%;letter-spacing:-.015em;mar
 .nav{display:flex;gap:30px;margin-left:auto}
 .nav a{text-decoration:none;font-weight:600;font-size:16px;white-space:nowrap;padding:6px 0;border-bottom:2px solid transparent}
 .nav a:hover{border-color:var(--accent)}
-.top-call{display:flex;align-items:center;gap:9px;padding:12px 18px;background:var(--accent);color:var(--accent-ink);font:800 17px var(--display);font-stretch:108%;text-decoration:none;border-radius:var(--r);white-space:nowrap}
+.top-call{display:flex;align-items:center;gap:9px;padding:12px 18px;background:var(--accent);color:var(--accent-ink);font:800 17px var(--display);font-stretch:108%;text-decoration:none;border-radius:var(--pill);white-space:nowrap}
 .top-call svg{width:18px;height:18px;fill:currentColor}
 
 /* buttons: square, not pills */
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 24px;border-radius:var(--r);font:800 17px var(--display);font-stretch:108%;text-decoration:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 24px;border-radius:var(--pill);font:800 17px var(--display);font-stretch:108%;text-decoration:none}
 .btn-main{background:var(--accent);color:var(--accent-ink)}
 .btn-line{border:2px solid currentColor}
+.btn svg{width:18px;height:18px;fill:currentColor}
 .hero-act{display:flex;flex-wrap:wrap;gap:12px}
 
 /* hero, shared */
@@ -106,10 +113,10 @@ h1,h2,h3{font-family:var(--display);font-stretch:112%;letter-spacing:-.015em;mar
 /* services as a breaker panel */
 .services{background:var(--bg-2)}
 .panel{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px;background:var(--card);border:1px solid var(--line);padding:12px 40px}
-.circuit{display:grid;grid-template-columns:22px 1fr;gap:18px;padding:24px 0;border-bottom:1px solid var(--line)}
+.circuit{display:grid;grid-template-columns:44px 1fr;gap:18px;padding:24px 0;border-bottom:1px solid var(--line)}
 .circuit:nth-last-child(-n+2){border-bottom:0}
-.breaker{width:14px;height:34px;margin-top:4px;border:2px solid var(--ink);border-radius:2px;position:relative}
-.breaker:after{content:"";position:absolute;left:2px;right:2px;top:2px;height:12px;background:var(--accent)}
+.mark-breaker .mark{width:14px;height:34px;margin-top:4px;border:2px solid var(--ink);border-radius:2px;position:relative}
+.mark-breaker .mark:after{content:"";position:absolute;left:2px;right:2px;top:2px;height:12px;background:var(--accent)}
 .circuit h3{font-size:21px;font-weight:750;font-stretch:108%}
 .circuit p{margin:6px 0 0;color:var(--muted);font-size:16.5px}
 .svc-note{margin:24px 0 0;color:var(--muted);max-width:70ch}
@@ -133,7 +140,6 @@ h1,h2,h3{font-family:var(--display);font-stretch:112%;letter-spacing:-.015em;mar
 .contact-in{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:64px;align-items:center}
 .contact h2{font-size:clamp(34px,4vw,56px);font-weight:850;max-width:16ch}
 .contact-in>div>p{color:rgba(255,255,255,.78);font-size:18.5px;max-width:48ch;margin:20px 0 0}
-.contact .area{font-weight:600;color:#fff}
 .contact-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-top:6px solid var(--accent);padding:32px}
 .big-phone{display:block;font:850 clamp(30px,3.2vw,42px)/1 var(--display);font-stretch:112%;text-decoration:none}
 .mail{display:block;margin-top:12px;font-weight:600;text-decoration:underline;text-underline-offset:4px;word-break:break-all}
@@ -147,9 +153,58 @@ h1,h2,h3{font-family:var(--display);font-stretch:112%;letter-spacing:-.015em;mar
 .footnote{flex-basis:100%;margin:6px 0 0;color:rgba(255,255,255,.5)}
 .mcall{display:none}
 
+/* services: numbered mark (every trade but electrical) */
+.mark-number .mark{font:800 17px/1 var(--display);color:var(--accent-text);padding-top:5px;border-top:3px solid var(--accent);width:34px}
+.price{display:inline-block;margin-top:10px!important;padding:4px 12px;border-radius:var(--r);background:var(--wash);color:var(--ink)!important;font-weight:700}
+.also{margin-top:36px;padding:28px 32px;background:var(--card);border:1px solid var(--line);border-radius:var(--r)}
+.also h3{font-size:20px;margin-bottom:14px}
+.also ul{columns:3;column-gap:32px;margin:0;padding:0;list-style:none}
+.also li{break-inside:avoid;padding:6px 0 6px 18px;position:relative;font-size:16px}
+.also li:before{content:"";position:absolute;left:0;top:15px;width:8px;height:8px;background:var(--accent);border-radius:var(--r)}
+
+/* facts strip as plain lines (no numbers published) */
+.facts-list .fact{display:flex;align-items:center;gap:12px;padding:24px 22px}
+.facts-list .fact:before{content:"";width:10px;height:10px;flex:none;background:var(--accent);border-radius:var(--pill)}
+.facts-list .fact span{margin:0;color:var(--ink);font-weight:600;font-size:16px}
+
+/* promise band: their own words */
+.promise{background:var(--deep);color:#fff;padding:96px 0}
+.promise blockquote{margin:0 0 56px;font:800 clamp(28px,3.4vw,46px)/1.15 var(--display);font-stretch:var(--stretch);letter-spacing:-.02em;max-width:26ch}
+.promise blockquote:before{content:"";display:block;width:56px;height:5px;background:var(--accent);margin-bottom:26px}
+.promise-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:36px;border-top:1px solid rgba(255,255,255,.18);padding-top:36px}
+.promise-grid h3{font-size:21px}
+.promise-grid p{color:rgba(255,255,255,.75);margin:10px 0 0}
+
+/* reviews: only verbatim words from their own site */
+.rev-grid{columns:3;column-gap:20px}
+.rev{break-inside:avoid;margin:0 0 20px;padding:26px;border-radius:var(--r);background:var(--card);border:1px solid var(--line)}
+.rev blockquote{margin:0 0 14px;font-size:16.5px}
+.rev figcaption{font-weight:700;color:var(--accent-text)}
+.rev-big{background:var(--accent);color:var(--accent-ink);border:0}
+.rev-big blockquote{font:700 21px/1.35 var(--display)}
+.rev-big figcaption{color:inherit}
+
+/* service area */
+.area{background:var(--wash)}
+.area-in{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:start}
+.area .head{grid-template-columns:1fr;margin:0}
+.towns{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.towns li{padding:8px 14px;border-radius:var(--pill);background:var(--card);font-weight:600;font-size:15px;border:1px solid var(--line)}
+.radius{display:flex;align-items:center;gap:22px;margin-bottom:20px;padding:24px 28px;border-radius:var(--r);background:var(--deep);color:#fff}
+.radius strong{font:800 72px/.9 var(--display);color:#fff}
+.radius span{font:700 20px/1.2 var(--display);max-width:14ch}
+.contact .area-line{font-weight:600;color:#fff}
+.brand-badge{display:grid;place-items:center;width:44px;height:44px;border-radius:var(--r);background:var(--accent);color:var(--accent-ink);font:800 17px var(--display);flex:none}
+.sk-warm .mosaic,.sk-warm .about-photo img,.sk-warm .contact-card,.sk-warm .panel,.sk-warm .L-plate .hero-copy{border-radius:var(--r)}
+.sk-warm .mosaic figure,.sk-slab .mosaic figure{border-radius:var(--r)}
+.sk-slab h1,.sk-slab h2{letter-spacing:-.01em}
+
+.bw-short{display:none}
+@media (max-width:700px){.bw-full{display:none}.bw-short{display:inline}}
 @media (max-width:1020px){
   .nav{display:none}
-  .head,.about-in,.contact-in,.types{grid-template-columns:1fr;gap:20px}
+  .head,.about-in,.contact-in,.types,.area-in{grid-template-columns:1fr;gap:20px}
+  .rev-grid{columns:2}.also ul{columns:2}
   .L-band .hero-copy{grid-template-columns:1fr}.L-band .hero h1{grid-row:auto}
 }
 @media (max-width:640px){
@@ -193,5 +248,8 @@ h1,h2,h3{font-family:var(--display);font-stretch:112%;letter-spacing:-.015em;mar
   .panel{grid-template-columns:1fr;padding:4px 20px}
   .circuit:nth-last-child(2){border-bottom:1px solid var(--line)}
   .contact-card{padding:24px}
+  .rev-grid,.also ul{columns:1}.also{padding:22px}
+  .promise{padding:64px 0}.radius strong{font-size:56px}
+  .facts-list .fact{padding:16px 10px 16px 0;align-items:flex-start}.facts-list .fact:before{margin-top:7px}
   .mcall{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;justify-content:center;padding:16px;border-radius:var(--r);background:var(--accent);color:var(--accent-ink);font:800 17px var(--display);text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.3)}
 }
