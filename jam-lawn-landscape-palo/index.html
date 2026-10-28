@@ -76,9 +76,11 @@
 
 <section class="sec about" id="about">
   <div class="wrap about-in">
+    
     <div class="about-copy">
       <div class="head"><h2>A Palo crew for your lawn, landscape and lot</h2></div>
       <p>JAM Lawn &amp; Landscape has kept lawns in the Palo area healthy for over 16 years, and has been grading yards here since 2015.</p><p>Homeowners, businesses and condo associations get one crew for mowing, planting, sod, grading, hauling and winter plowing.</p>
+      
       
     </div>
     <aside class="about-side">
@@ -98,7 +100,7 @@
     <div class="panel mark-number">
       <div class="circuit"><span class="mark" aria-hidden="true">01</span><div><h3>Lawn mowing &amp; trimming</h3><p>If you don&#39;t have time for regular maintenance, or just want great results without the hard work, we keep residential and commercial properties looking their best.</p></div></div><div class="circuit"><span class="mark" aria-hidden="true">02</span><div><h3>Weed control &amp; fertilization</h3><p>Weed control, grub control and fertilizer applications that keep your entire property healthy.</p></div></div><div class="circuit"><span class="mark" aria-hidden="true">03</span><div><h3>Landscaping &amp; sod</h3><p>New lawn installation, hardscaping, sod, reseeding, tree, shrub and flower bed planting, and spring and fall cleanups.</p></div></div><div class="circuit"><span class="mark" aria-hidden="true">04</span><div><h3>Grading &amp; hauling</h3><p>We level yards, control erosion and extend drains, and we haul away concrete, asphalt millings, rocks and old driveways.</p></div></div><div class="circuit"><span class="mark" aria-hidden="true">05</span><div><h3>Commercial snow plowing</h3><p>Plowing, hauling, salting, sanding and loading so snow pile-ups never slow your business down.</p></div></div>
     </div>
-    <div class="also"><h3>Also on the list</h3><ul><li>Portable irrigation</li><li>Watering</li><li>Drain &amp; pipe extensions</li><li>Spring &amp; fall cleanups</li></ul></div>
+    <div class="also"><h3>Also on the list</h3><ul class="c2"><li>Portable irrigation</li><li>Watering</li><li>Drain &amp; pipe extensions</li><li>Spring &amp; fall cleanups</li></ul></div>
     
   </div>
 </section>
@@ -139,5 +141,8 @@
   </div>
 </footer>
 <a class="mcall" href="tel:3192028440">Call JAM · (319) 202-8440</a>
+<script>/* the sticky call bar waits until the hero's own call button scrolls away, so they never stack */
+(function(){var b=document.querySelector('.hero-act');if(!b||!('IntersectionObserver' in window))return;
+new IntersectionObserver(function(e){document.body.classList.toggle('hero-call-seen',e[0].isIntersecting)}).observe(b)})();</script>
 </body>
 </html>

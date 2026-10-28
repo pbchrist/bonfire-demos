@@ -79,12 +79,14 @@
 
 <section class="sec about" id="about">
   <div class="wrap about-in about-solo">
+    <div class="head"><h2>Fixed right the first time</h2></div>
     <div class="about-copy">
-      <div class="head"><h2>Fixed right the first time</h2></div>
+      
       <p>Wheeling Heating has more than 25 years of experience, strong installation skills and deep knowledge of residential systems and their common problems, including design services for new builds.</p><p>The shop prides itself on solving comfort problems the first time, backed by the Valley&#39;s lowest return ratio, and on annual maintenance agreements that get your system ready before the weather turns.</p>
       
+      
     </div>
-    <dl class="people people-row"><div><dt>Dan Cook</dt><dd>Owner</dd></div></dl>
+    
   </div>
 </section>
 
@@ -112,7 +114,7 @@
   <div class="wrap contact-in">
     <div>
       <h2>Call for same-day service</h2>
-      <p>Our 24-hour hotline is always answered. Office hours are Monday to Friday, 8 AM to 6 PM.</p>
+      <p>Call our 24-hour hotline, there to answer your call 24 hours a day, 7 days a week. Office hours are Monday to Friday, 8 AM to 6 PM.</p>
       <p class="area-line">Marshall, Brooke, Wetzel and Hancock counties in West Virginia, and Belmont, Harrison, Jefferson and Guernsey in Ohio.</p>
     </div>
     <div class="contact-card">
@@ -137,5 +139,8 @@
   </div>
 </footer>
 <a class="mcall" href="tel:3042330699">Call Wheeling Heating · (304) 233-0699</a>
+<script>/* the sticky call bar waits until the hero's own call button scrolls away, so they never stack */
+(function(){var b=document.querySelector('.hero-act');if(!b||!('IntersectionObserver' in window))return;
+new IntersectionObserver(function(e){document.body.classList.toggle('hero-call-seen',e[0].isIntersecting)}).observe(b)})();</script>
 </body>
 </html>

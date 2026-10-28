@@ -81,7 +81,7 @@
     <div class="panel mark-number">
       <div class="circuit"><span class="mark" aria-hidden="true">01</span><div><h3>Roof replacement &amp; repair</h3><p>Full replacements, repairs and storm damage across Eastern Iowa, shingle and metal, backed by manufacturer warranties.</p></div></div><div class="circuit"><span class="mark" aria-hidden="true">02</span><div><h3>Siding</h3><p>New siding that boosts curb appeal and protects your home for decades, with a free estimate and an honest assessment.</p></div></div><div class="circuit"><span class="mark" aria-hidden="true">03</span><div><h3>Windows &amp; doors</h3><p>Replacement windows and doors that stop the heating and cooling many homeowners don&#39;t realize they&#39;re losing.</p></div></div><div class="circuit"><span class="mark" aria-hidden="true">04</span><div><h3>Decks</h3><p>Custom composite and wood decks built for Iowa weather, with railings and stairs, backed by a 15-year workmanship warranty.</p></div></div>
     </div>
-    <div class="also"><h3>Also on the list</h3><ul><li>Gutters, soffit &amp; fascia</li><li>Storm damage</li><li>Snow removal for businesses and residents in Le Claire, Princeton &amp; Eldridge</li></ul></div>
+    <div class="also"><h3>Also on the list</h3><ul class="c3"><li>Gutters, soffit &amp; fascia</li><li>Storm damage</li><li>Snow removal for businesses and residents in Le Claire, Princeton &amp; Eldridge</li></ul></div>
     
   </div>
 </section>
@@ -100,9 +100,11 @@
 
 <section class="sec about" id="about">
   <div class="wrap about-in about-solo">
+    <div class="head"><h2>Exterior renovations since 2017</h2></div>
     <div class="about-copy">
-      <div class="head"><h2>Exterior renovations since 2017</h2></div>
+      
       <p>Meeks Construction has been doing exterior renovations across Eastern Iowa since 2017: roofing, siding, windows, gutters and decks.</p><p>Our owner lives in Le Claire. One slow winter he asked what we were going to do with the big ole trucks sitting around, so now we push snow for businesses and residents too.</p>
+      
       
     </div>
     
@@ -142,5 +144,8 @@
   </div>
 </footer>
 <a class="mcall" href="tel:3195408262">Call Meeks · (319) 540-8262</a>
+<script>/* the sticky call bar waits until the hero's own call button scrolls away, so they never stack */
+(function(){var b=document.querySelector('.hero-act');if(!b||!('IntersectionObserver' in window))return;
+new IntersectionObserver(function(e){document.body.classList.toggle('hero-call-seen',e[0].isIntersecting)}).observe(b)})();</script>
 </body>
 </html>
