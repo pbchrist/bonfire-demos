@@ -1,6 +1,6 @@
 /* SiteFactory kit: one stylesheet for every trade.
    Per business: skin (type + corners + paper), theme (light/dark), layout (plate/split/band), accent.
-   Per trade: only the service mark (numbers or breaker marks) via .mark-*. */
+   Per trade: only the service mark (numbered) via .mark-*. */
 :root{--bg:#f4f5f6;--bg-2:#e9ecef;--card:#fff;--ink:#14171c;--muted:#5a626d;--line:#d6dbe0;--r:4px;--pill:4px;--stretch:100%;
   --display:system-ui,sans-serif;--body:system-ui,sans-serif}
 .sk-panel{--display:"Archivo",system-ui,sans-serif;--body:"Source Sans 3",system-ui,sans-serif;--stretch:112%}
@@ -43,7 +43,6 @@ html{scroll-padding-top:96px}
 .hero{position:relative;overflow:hidden;background:#0c0e11;color:#fff}
 .hero-media{position:absolute;inset:0}
 .hero-video{width:100%;height:100%;object-fit:cover}
-.hero-video.mirror{transform:scaleX(-1)}
 .hero-shade{position:absolute;inset:0}
 .hero-in{position:relative}
 .kicker{margin:0 0 18px;font-weight:700;font-size:16px;color:var(--accent-text);display:flex;align-items:center;gap:12px}
@@ -59,10 +58,9 @@ html{scroll-padding-top:96px}
 .L-plate .kicker{color:var(--accent-text)}
 .L-plate .hero-sub{color:var(--muted)}
 
-/* layout: split — solid deep panel left, clip right with a cut edge */
+/* layout: split — full-bleed clip under a deep panel of the brand color that fades out to the right */
 .L-split .hero{min-height:min(82vh,760px);display:flex;align-items:center;background:var(--deep)}
-.L-split .hero-media{left:42%;clip-path:polygon(9% 0,100% 0,100% 100%,0 100%)}
-.L-split .hero-shade{background:linear-gradient(90deg,rgba(0,0,0,.35),rgba(0,0,0,0) 40%)}
+.L-split .hero-shade{background:linear-gradient(90deg,color-mix(in srgb,var(--deep) 94%,transparent) 0%,color-mix(in srgb,var(--deep) 86%,transparent) 36%,color-mix(in srgb,var(--deep) 20%,transparent) 72%,transparent 100%)}
 .L-split .hero-in{padding:90px 0}
 .L-split .hero-copy{max-width:520px}
 .L-split .hero h1{font-size:clamp(38px,min(4.4vw,6.6vh),64px)}
@@ -119,8 +117,6 @@ html{scroll-padding-top:96px}
 .circuit{display:grid;grid-template-columns:44px 1fr;gap:18px;padding:24px 0;border-bottom:1px solid var(--line)}
 .circuit:nth-last-child(-n+2){border-bottom:0}
 .circuit:last-child:nth-child(odd){grid-column:1/-1}.circuit:nth-last-child(2):nth-child(even){border-bottom:1px solid var(--line)}  /* an odd count never leaves a hole */
-.mark-breaker .mark{width:14px;height:34px;margin-top:4px;border:2px solid var(--ink);border-radius:2px;position:relative}
-.mark-breaker .mark:after{content:"";position:absolute;left:2px;right:2px;top:2px;height:12px;background:var(--accent)}
 .circuit h3{font-size:21px;font-weight:750;font-stretch:108%}
 .circuit p{margin:6px 0 0;color:var(--muted);font-size:16.5px}
 .svc-note{margin:24px 0 0;color:var(--muted);max-width:70ch}
@@ -148,7 +144,7 @@ html{scroll-padding-top:96px}
 .contact-in>div>p{color:rgba(255,255,255,.78);font-size:18.5px;max-width:48ch;margin:20px 0 0}
 .contact-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-top:6px solid var(--accent);padding:32px}
 .big-phone{display:block;font:850 clamp(30px,3.2vw,42px)/1 var(--display);font-stretch:112%;text-decoration:none}
-.mail{display:block;margin-top:12px;font-weight:600;text-decoration:underline;text-underline-offset:4px;word-break:break-all}
+.mail{display:block;margin-top:12px;font-weight:600;text-decoration:underline;text-underline-offset:4px;overflow-wrap:anywhere}
 .contact dl{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;margin:24px 0 0;font-size:16px}
 .contact dt{color:rgba(255,255,255,.58)}.contact dd{margin:0}
 
@@ -226,23 +222,20 @@ html{scroll-padding-top:96px}
   .nav{gap:20px}.nav a{font-size:14.5px}
   .brand-logo{height:44px;max-width:220px}.brand-word{font-size:19px}.brand-sub{display:none}
   .top-call{margin-left:auto;padding:10px 12px}.top-call span{display:none}
-  /* every layout: clip as a band on top, copy on solid color below */
-  .hero,.L-plate .hero,.L-split .hero,.L-band .hero{display:block;min-height:0}
+  /* every layout: the clip fills the hero and the headline sits on it, darkened from the bottom */
+  .hero,.L-plate .hero,.L-split .hero,.L-band .hero{display:flex;align-items:flex-end;min-height:min(88svh,720px)}
   .L-band .hero-copy{display:block}
-  .hero-media{position:relative;inset:auto;height:240px;left:0;clip-path:none}
-  .L-split .hero-media{left:0;clip-path:none;height:210px}
-  .L-band .hero-media{height:300px}
-  .L-band .hero-sub{margin:16px 0 24px}
-  .hero-shade,.L-plate .hero-shade,.L-split .hero-shade,.L-band .hero-shade{background:linear-gradient(0deg,rgba(0,0,0,.35),rgba(0,0,0,0) 50%)}
-  .hero-in{padding:0}
-  .L-plate .hero-in,.L-split .hero-in,.L-band .hero-in{padding:0}
-  .L-plate .hero-copy{margin:-36px 0 0;padding:28px 22px 34px;position:relative}
-  .L-split .hero-copy,.L-band .hero-copy{padding:30px 0 36px}
-  .L-band .hero-copy{border-bottom-width:0}
-  .L-band .hero{background:#0c0e11}
+  .hero-media,.L-split .hero-media{inset:0;clip-path:none}
+  .hero-shade,.L-plate .hero-shade,.L-split .hero-shade,.L-band .hero-shade{background:linear-gradient(0deg,rgba(8,9,11,.94) 0%,rgba(8,9,11,.82) 45%,rgba(8,9,11,.25) 80%,rgba(8,9,11,.1) 100%)}
+  .hero-in,.L-plate .hero-in,.L-split .hero-in,.L-band .hero-in{padding:0}
+  .hero-copy,.L-plate .hero-copy,.L-split .hero-copy,.L-band .hero-copy{background:none;color:#fff;margin:0;padding:120px 0 34px;border:0}
+  .L-plate .kicker,.L-split .kicker,.L-band .kicker{color:#fff}
+  .L-plate .hero-sub,.L-split .hero-sub,.L-band .hero-sub{color:rgba(255,255,255,.86)}
+  .L-plate .btn-line{color:#fff;border-color:#fff}
   .hero h1,.L-split .hero h1,.L-band .hero h1{font-size:38px}
   .hero-sub{font-size:17px;margin:16px 0 24px}
   .hero-act .btn{width:100%}
+  .mail{font-size:15px}
   .facts-in{grid-template-columns:1fr 1fr}
   .fact{padding:20px 14px;border-left:0;border-top:1px solid var(--line)}
   .fact:nth-child(odd){padding-left:0}.fact:nth-child(-n+2){border-top:0}
@@ -271,3 +264,4 @@ html{scroll-padding-top:96px}
 }
 .sec:is(.work,.about,.reviews)+.sec:is(.work,.about,.reviews){padding-top:0}  /* two plain sections in a row would double the gap */
 .creds+.people{margin-top:26px}
+.promise+.contact{padding-top:0}.promise+.contact .contact-in{border-top:1px solid rgba(255,255,255,.18);padding-top:72px}
