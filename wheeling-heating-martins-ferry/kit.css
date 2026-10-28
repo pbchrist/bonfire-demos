@@ -133,7 +133,7 @@ h1,h2,h3{font-family:var(--display);font-stretch:var(--stretch);letter-spacing:-
 .about-photo img{width:100%;aspect-ratio:4/3;object-fit:cover}
 .about-photo figcaption{margin-top:8px;color:var(--muted);font-size:14.5px}
 .about-solo{grid-template-columns:minmax(0,1fr);gap:28px}.about-solo .about-copy{max-width:780px}
-.people-row{display:flex;flex-wrap:wrap;gap:12px;border-top:0;background:none}.people-row div{display:block;flex:0 1 auto;min-width:220px;padding:16px 24px;border:0;border-left:4px solid var(--accent);background:var(--card)}.people-row dd{text-align:left;margin-top:4px}
+.people.people-row{display:flex;flex-wrap:wrap;gap:12px;border-top:0;background:none}.people.people-row div{display:block;flex:0 1 auto;min-width:220px;padding:16px 24px;border:0;border-left:4px solid var(--accent);background:var(--card)}.people.people-row dd{text-align:left;margin-top:4px}
 .people{margin:0;border-top:4px solid var(--accent);background:var(--card)}
 .people div{display:flex;justify-content:space-between;gap:16px;padding:15px 20px;border-bottom:1px solid var(--line)}
 .people dt{font:700 17.5px var(--display);font-stretch:106%}
