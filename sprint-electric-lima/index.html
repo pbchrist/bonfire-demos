@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="kit.css">
-<style>:root{--accent:#1d4f9e;--accent-ink:#ffffff;--accent-text:#1d4f9e;--deep:#0e1725;--wash:#dee4ed}</style>
+<style>:root{--accent:#1d4f9e;--accent-ink:#ffffff;--accent-text:#1d4f9e;--accent-glow:#99b0d3;--deep:#0e1725;--wash:#dee4ed}</style>
 </head>
 <body class="sk-panel th-light L-plate tr-electrician">
 
@@ -16,14 +16,15 @@
   <div class="wrap top-in">
     <a class="brand" href="#">
       <span class="brand-word">Sprint Electric</span>
-      <span class="brand-sub">Commercial &amp; industrial electrical contractor</span>
+      <span class="brand-sub">Electrical contractor</span>
     </a>
     <nav class="nav" aria-label="Main">
       <a href="#work">Projects</a>
       <a href="#services">Services</a>
       
+      
       <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+            <a href="#contact">Contact</a>
     </nav>
     <a class="top-call" href="tel:4192220494"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>419-222-0494</span></a>
   </div>
@@ -31,7 +32,7 @@
 
 <section class="hero">
   <div class="hero-media">
-    <video class="hero-video" style="object-position:62% 50%" src="electrician.mp4#t=2.4" poster="electrician.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+    <video class="hero-video" style="object-position:62% 50%" src="electrician-px-28886877.mp4#t=2.4" poster="electrician-px-28886877.jpg" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
     <div class="hero-shade"></div>
   </div>
   <div class="wrap hero-in">
@@ -54,6 +55,13 @@
 </section>
 
 
+
+
+
+
+
+
+
 <section class="sec work" id="work">
   <div class="wrap">
     <div class="head"><h2>Our crew, our equipment</h2><p>Company-owned all-terrain and battery lifts and a bucket truck, so we can ramp up rapidly no matter the size or complexity of the job.</p></div>
@@ -63,6 +71,7 @@
     <div class="types"><h3>Buildings we wire</h3><ul><li>Manufacturing</li><li>Warehouses</li><li>Offices</li><li>Medical</li><li>Education</li><li>Gas stations</li><li>Motels</li><li>Restaurants</li><li>Retail stores</li><li>Banks</li><li>Churches</li><li>Pole lighting</li></ul></div>
   </div>
 </section>
+
 
 
 <section class="sec services" id="services">
@@ -80,19 +89,23 @@
 
 
 
+
+
+
 <section class="sec about" id="about">
-  <div class="wrap about-in">
+  <div class="wrap about-in about-solo">
+    <div class="head"><h2>A Lima company for more than 35 years</h2></div>
     <div class="about-copy">
-      <div class="head"><h2>A Lima company for more than 35 years</h2></div>
+      
       <p>Todd Spicer founded Sprint Electric in 1989 with Phillip Brooks, starting out in a leased building. The company has since grown into its own 12,600 square foot main office and warehouse on East Hanthorn Road in Lima.</p><p>Today Sprint Electric is owned by Bryan Brooks and Andrew Burbacher, and serves commercial and industrial customers in the Lima and Columbus markets.</p>
       <ul class="creds"><li>Member, Associated Builders and Contractors (ABC)</li><li>Bonded and certified commercial &amp; industrial contractor</li></ul>
+      <dl class="people people-row"><div><dt>Bryan Brooks</dt><dd>Co-owner</dd></div><div><dt>Andrew Burbacher</dt><dd>Co-owner</dd></div><div><dt>Stuart Bolender</dt><dd>Vice President</dd></div><div><dt>Roland Oakley</dt><dd>Estimator</dd></div><div><dt>Kelli Hazelton</dt><dd>Treasurer</dd></div></dl>
     </div>
-    <aside class="about-side">
-      
-      <dl class="people"><div><dt>Bryan Brooks</dt><dd>Co-owner</dd></div><div><dt>Andrew Burbacher</dt><dd>Co-owner</dd></div><div><dt>Stuart Bolender</dt><dd>Vice President</dd></div><div><dt>Roland Oakley</dt><dd>Estimator</dd></div><div><dt>Kelli Hazelton</dt><dd>Treasurer</dd></div></dl>
-    </aside>
+    
   </div>
 </section>
+
+
 
 
 
@@ -125,5 +138,8 @@
   </div>
 </footer>
 <a class="mcall" href="tel:4192220494">Call Sprint Electric · 419-222-0494</a>
+<script>/* the sticky call bar waits until the hero's own call button scrolls away, so they never stack */
+(function(){var b=document.querySelector('.hero-act');if(!b||!('IntersectionObserver' in window))return;
+new IntersectionObserver(function(e){document.body.classList.toggle('hero-call-seen',e[0].isIntersecting)}).observe(b)})();</script>
 </body>
 </html>

@@ -18,6 +18,7 @@ h1,h2,h3{font-family:var(--display);font-stretch:var(--stretch);letter-spacing:-
 .wrap{width:min(1200px,calc(100% - 64px));margin:0 auto}
 
 /* header: accent rule on top, logo or wordmark */
+html{scroll-padding-top:96px}
 .top{position:sticky;top:0;z-index:20;background:var(--card);border-top:5px solid var(--accent);border-bottom:1px solid var(--line)}
 .th-dark .top{background:#000}
 .top-in{display:flex;align-items:center;gap:28px;height:78px}
@@ -208,7 +209,11 @@ h1,h2,h3{font-family:var(--display);font-stretch:var(--stretch);letter-spacing:-
 .bw-short{display:none}
 @media (max-width:700px){.bw-full{display:none}.bw-short{display:inline}}
 @media (max-width:1020px){
-  .nav{display:none}
+  /* the nav drops to its own row under the logo, scrolling sideways if it must */
+  .top-in{flex-wrap:wrap;height:auto;padding:10px 0 0;row-gap:4px}
+  .nav{order:3;width:100%;margin:0;gap:24px;overflow-x:auto;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}
+  .nav a{font-size:15px;padding:6px 0 9px}
+  .top-call{margin-left:auto}
   .head,.about-in,.contact-in,.types,.area-in{grid-template-columns:1fr;gap:20px}
   .rev-grid{columns:2}.also ul,.also ul.c2{columns:2}
   .L-band .hero-copy{grid-template-columns:1fr}.L-band .hero h1{grid-row:auto}
@@ -217,7 +222,8 @@ h1,h2,h3{font-family:var(--display);font-stretch:var(--stretch);letter-spacing:-
   body{font-size:16.5px}
   .foot{padding-bottom:108px}
   .wrap{width:calc(100% - 36px)}
-  .top-in{height:64px;gap:12px}
+  .top-in{gap:12px;padding-top:8px}
+  .nav{gap:20px}.nav a{font-size:14.5px}
   .brand-logo{height:44px;max-width:220px}.brand-word{font-size:19px}.brand-sub{display:none}
   .top-call{margin-left:auto;padding:10px 12px}.top-call span{display:none}
   /* every layout: clip as a band on top, copy on solid color below */
@@ -263,3 +269,5 @@ h1,h2,h3{font-family:var(--display);font-stretch:var(--stretch);letter-spacing:-
   .mcall{transition:transform .25s ease}.hero-call-seen .mcall{transform:translateY(140%)}
   .mcall{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;justify-content:center;padding:16px;border-radius:var(--r);background:var(--accent);color:var(--accent-ink);font:800 17px var(--display);text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.3)}
 }
+.sec:is(.work,.about,.reviews)+.sec:is(.work,.about,.reviews){padding-top:0}  /* two plain sections in a row would double the gap */
+.creds+.people{margin-top:26px}
