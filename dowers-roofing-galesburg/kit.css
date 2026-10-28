@@ -67,7 +67,7 @@ html{scroll-padding-top:96px}
 .L-split .hero-sub{color:rgba(255,255,255,.78)}
 .L-split .kicker{color:var(--accent-glow)}
 
-/* layout: band — full-bleed clip, copy along the bottom with a breaker stripe */
+/* layout: band — full-bleed clip, copy along the bottom with an accent stripe */
 .L-band .hero{min-height:min(84vh,780px);display:flex;align-items:flex-end}
 .L-band .hero-shade{background:linear-gradient(0deg,rgba(8,9,11,.92) 0%,rgba(8,9,11,.55) 45%,rgba(8,9,11,.1) 100%)}
 .L-band .hero-in{padding:0 0 64px}
@@ -111,7 +111,7 @@ html{scroll-padding-top:96px}
 .types ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
 .types li{padding:7px 14px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);font-weight:600;font-size:15.5px}
 
-/* services as a breaker panel */
+/* services as a numbered panel */
 .services{background:var(--bg-2)}
 .panel{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px;background:var(--card);border:1px solid var(--line);padding:12px 40px}
 .circuit{display:grid;grid-template-columns:44px 1fr;gap:18px;padding:24px 0;border-bottom:1px solid var(--line)}
